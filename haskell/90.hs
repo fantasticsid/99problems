@@ -1,6 +1,7 @@
 queens :: Int -> [[Int]]
 queens n = queensGen n n
 
+queensGen :: Int -> Int -> [[Int]]
 queensGen n 0 = [[]]
 queensGen n m = let l = queensGen n (m-1)
                 in  concatMap (appendViableEle [0..n-1]) l
